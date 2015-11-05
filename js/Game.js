@@ -210,8 +210,8 @@ BasicGame.Game.prototype = {
             this.panelInfo1.x = 320; // moved info text over since it is longer now
 
             // using time method to calculate time since game started till game over
-            this.panelInfo1.text = 'Lollies survived for: ' + this.game.math.floor(this.game.time.elapsedSecondsSince(this.lolliesLivedFor)) + ' seconds';
-            this.panelInfo2.text = 'Lions Punched: ' + this.punchesThrown;
+            this.panelInfo1.text = 'Hilary survived for: ' + this.game.math.floor(this.game.time.elapsedSecondsSince(this.lolliesLivedFor)) + ' seconds';
+            this.panelInfo2.text = 'Donalds shot: ' + this.punchesThrown;
         }
 
     },
@@ -267,7 +267,7 @@ BasicGame.Game.prototype = {
 
         // switching lions on the left or right side of screen
         if (lion) {
-            lion.reset(this.game.rnd.pick([1000, -100]), this.game.height - 68); // Position on ground
+            lion.reset(this.game.rnd.pick([1000, -100]), this.game.height - (this.game.rnd.pick([68, 140]))); // Position on ground or above
             lion.revive(); // Set "alive"
             lion.body.checkCollision = {
                 up: true,
@@ -281,9 +281,11 @@ BasicGame.Game.prototype = {
             // If lion spawns on left move left if right move right
             if (lion.x > 480) {
                 lion.body.velocity.x = this.game.rnd.integerInRange(-100, -500); // Move left
+                lion.body.velocity.y = this.game.rnd.integerInRange(1, 20 ); // come from higher
                 lion.scale.x = 1;
             } else {
                 lion.body.velocity.x = this.game.rnd.integerInRange(100, 500); // Move right
+                lion.body.velocity.y = this.game.rnd.integerInRange(1, 20 ); // come from higher
                 lion.scale.x = -1;
             }
             lion.rotation = 0; // Reset rotation

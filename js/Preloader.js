@@ -11,7 +11,7 @@ BasicGame.Preloader.prototype = {
 
     preload: function () {
         // Set stage background color
-        this.game.stage.backgroundColor = '#84CBEC';
+        this.game.stage.backgroundColor = '#FFBCE2';
         this.add.sprite(740, this.game.world.height - 60, 'preload');
         this.add.sprite(150, 110, 'preloadingbar');
         this.preloadBar = this.add.sprite(150, 110, 'loadingbar');
@@ -30,17 +30,17 @@ BasicGame.Preloader.prototype = {
 		this.load.bitmapFont('caslon', 'fonts/caslon.png', 'fonts/caslon.xml');
         */
         //	+ lots of other required assets here
-        this.game.load.image('lion', 'assets/lion.png'); // name , location
+        this.game.load.image('lion', 'assets/dt-head.png'); // name , location
         this.game.load.image('panel', 'assets/intropanel.png');
         this.game.load.spritesheet('playbutton', 'assets/playbutton.png', 190, 49);
         this.game.load.image('ground', 'assets/ground.png');
         this.game.load.image('punch', 'assets/crosshair.png');
-        this.game.load.image('lolly1', 'assets/lolly1.png');
+        this.game.load.image('lolly1', 'assets/C-left.png');
         this.game.load.spritesheet('deadlolly1', 'assets/deadlolly1.png', 50, 50);
         this.game.load.spritesheet('deadlolly2', 'assets/deadlolly2.png', 50, 50);
         this.game.load.spritesheet('deadlolly3', 'assets/deadlolly3.png', 50, 50);
-        this.game.load.image('lolly2', 'assets/lolly2.png');
-        this.game.load.image('lolly3', 'assets/lolly3.png');
+        this.game.load.image('lolly2', 'assets/C-head.png');
+        this.game.load.image('lolly3', 'assets/C-right.png');
         this.game.load.image('cloud', 'assets/cloud_3.png');
         this.game.load.spritesheet('soundicons', 'assets/soundicons.png', 28, 27); // x, y of sprite images
         this.game.load.audio('backGroundMusic', 'assets/sounds/SonicBlast.mp3');
